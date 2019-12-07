@@ -1,0 +1,36 @@
+object(stdClass)#1 (1) {
+  ["token"]=>
+  string(395) "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE1NzU2NTgyMjQsImV4cCI6MTU3NTY1ODgyNCwiaWF0IjoxNTc1NjU4MjI0LCJpc3MiOiJMb2FkU29saWNpdHVkRGVjYXJnYU1hc2l2YVRlcmNlcm9zIiwiYWN0b3J0IjoiMzIzMDMwMzAzMTMwMzAzMDMwMzAzMDMzMzAzMDMwMzIzMjM3MzYzMiJ9._OI5D6JSvQty5HlOSXHzUJatV-8anuTgTRKpvlSjTvk%26wrap_subject%3d3230303031303030303030333030303232373632"
+}
+object(stdClass)#3 (3) {
+  ["IdSolicitud"]=>
+  NULL
+  ["CodEstatus"]=>
+  string(3) "305"
+  ["Mensaje"]=>
+  string(21) "Certificado Inválido"
+}
+object(stdClass)#6 (5) {
+  ["EstadoSolicitud"]=>
+  string(1) "0"
+  ["CodEstatus"]=>
+  string(3) "305"
+  ["Mensaje"]=>
+  string(21) "Certificado Inválido"
+  ["CodigoEstadoSolicitud"]=>
+  NULL
+  ["NumeroCFDIs"]=>
+  string(1) "0"
+}
+
+
+
+//2 prueba
+
+2019-12-06T18:54:55.0Z
+object(stdClass)#1 (1) { ["token"]=> string(395) "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE1NzU2NTg0OTgsImV4cCI6MTU3NTY1OTA5OCwiaWF0IjoxNTc1NjU4NDk4LCJpc3MiOiJMb2FkU29saWNpdHVkRGVjYXJnYU1hc2l2YVRlcmNlcm9zIiwiYWN0b3J0IjoiMzIzMDMwMzAzMTMwMzAzMDMwMzAzMDMzMzAzMDMwMzIzMjM3MzYzMiJ9.BlHFahgVB7XptTFdpVH0mK1DA9yhUbYn12rk2OG3o5I%26wrap_subject%3d3230303031303030303030333030303232373632" 
+}
+object(stdClass)#3 (3) { ["IdSolicitud"]=> NULL ["CodEstatus"]=> string(3) "305" ["Mensaje"]=> string(21) "Certificado Inválido" 
+}
+object(stdClass)#6 (5) { ["EstadoSolicitud"]=> string(1) "0" ["CodEstatus"]=> string(3) "305" ["Mensaje"]=> string(21) "Certificado Inválido" ["CodigoEstadoSolicitud"]=> NULL ["NumeroCFDIs"]=> string(1) "0" 
+} 
