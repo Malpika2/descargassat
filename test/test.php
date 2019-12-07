@@ -22,21 +22,21 @@ $idPaquete = '1fb832ff-6a25-4616-8ca8-04478690cc29_01';
 $ResponseAuth = loginSAT::soapRequest($cert,$key);
 
 // var_dump($ResponseAuth);
-echo 'Cert:'.$cert.'</br>';
-echo 'Key:'.$key.'</br>';
-echo 'ResponseAuth->token:'.$ResponseAuth->token.'</br>';
-echo 'rfc:'.$rfc.'</br>';
-echo 'fechaInicial:'.$fechaInicial.'</br>';
-echo 'fechaFinal:'.$fechaFinal.'</br>';
-echo 'TipoSolicitud:'.$TipoSolicitud.'</br>';
+// echo 'Cert:'.$cert.'</br>';
+// echo 'Key:'.$key.'</br>';
+// echo 'ResponseAuth->token:'.$ResponseAuth->token.'</br>';
+// echo 'rfc:'.$rfc.'</br>';
+// echo 'fechaInicial:'.$fechaInicial.'</br>';
+// echo 'fechaFinal:'.$fechaFinal.'</br>';
+// echo 'TipoSolicitud:'.$TipoSolicitud.'</br>';
 $ResponseRequest = solicita::soapRequest($cert, $key, $ResponseAuth->token, $rfc, $fechaInicial, $fechaFinal, $TipoSolicitud);
 var_dump($ResponseRequest);
-
-// $ResponseVerify = verifica::soapRequest($cert, $key, $ResponseAuth->token, $rfc, $idSolicitud);
-// var_dump($ResponseVerify);
-
-// $ResponseDownload = descarga::soapRequest($cert, $key, $ResponseAuth->token, $rfc, $idPaquete);
-// util::saveBase64File($ResponseDownload->Paquete, $idPaquete.".zip");
-// var_dump($ResponseDownload);
+echo '</br>';
+$ResponseVerify = verifica::soapRequest($cert, $key, $ResponseAuth->token, $rfc, $idSolicitud);
+var_dump($ResponseVerify);
+echo '</br>';
+$ResponseDownload = descarga::soapRequest($cert, $key, $ResponseAuth->token, $rfc, $idPaquete);
+util::saveBase64File($ResponseDownload->Paquete, $idPaquete.".zip");
+var_dump($ResponseDownload);
 
 ?>
