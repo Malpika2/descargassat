@@ -10,12 +10,12 @@ date_default_timezone_set('UTC');
 
 
 
-$cert = file_get_contents( __DIR__ . '/resources/20001000000200000192.cer');
-$key = file_get_contents( __DIR__ . '/resources/20001000000200000192.key.pem');
-$rfc = 'LAN7008173R5';
-$fechaInicial = '2018-06-02T00:00:00';
-$fechaFinal = '2018-06-02T12:59:59';
-$TipoSolicitud = 'CFDI';
+$cert = file_get_contents( __DIR__ . '/resources/FielPrueba.cer');
+$key = file_get_contents( __DIR__ . '/resources/FielPrueba.key');
+$rfc = 'VECJ880326123';
+$fechaInicial = '2018-07-02T00:00:00';
+$fechaFinal = '2018-08-02T12:59:59';
+$TipoSolicitud = 'Metadata';
 $idSolicitud = '1fb832ff-6a25-4616-8ca8-04478690cc29';
 $idPaquete = '1fb832ff-6a25-4616-8ca8-04478690cc29_01';
 
