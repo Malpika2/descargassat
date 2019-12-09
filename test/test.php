@@ -10,9 +10,10 @@ date_default_timezone_set('UTC');
 
 
 
-$cert = file_get_contents( __DIR__ . '/resources/FielPrueba.cer');
-$key = file_get_contents( __DIR__ . '/resources/FielPrueba.key');
-$rfc = 'VECJ880326123';
+$cert = file_get_contents( __DIR__ . '/resources/KeyPrueba01.cer');
+$key = file_get_contents( __DIR__ . '/resources/KeyPrueba01.key.pem');
+// $rfc = 'AUAC4601138F9';
+$rfc = 'ESI920427886';
 $fechaInicial = '2018-07-02T00:00:00';
 $fechaFinal = '2018-08-02T12:59:59';
 $TipoSolicitud = 'Metadata';

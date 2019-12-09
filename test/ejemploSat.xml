@@ -1,0 +1,32 @@
+<s:Envelope xmlns:des="http://DescargaMasivaTerceros.sat.gob.mx" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">
+	<s:Header/>
+	<s:Body>
+		<des:SolicitaDescarga>
+			<des:solicitud FechaFinal="2018-10-20T00:00:00" FechaInicial="2018-10-10T00:00:00" RfcEmisor="AUAC4601138F9" RfcReceptor="AUAC4601138F9" RfcSolicitante="AUAC4601138F9" TipoSolicitud="CFDI">
+				<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+					<SignedInfo>
+						<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+						<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+						<Reference URI="#_0">
+							<Transforms>
+								<Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+							</Transforms>
+							<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+							<DigestValue>GWJhbnAIBv0dny/4CY++AC4LPnY=</DigestValue>
+						</Reference>
+					</SignedInfo>
+					<SignatureValue>WrH2ljudYMB/f88LHIgv5q5qNI2CrYPs5Xx4SVuSj67/iVR4AKBoN5sQSXaqmvbMds1jrx+NqmS2z9IYWmMXzLkz4rhOrZco+5wdRAlZfsnCPgmgml44i5K1sMs+yx5eldHOUMXIpofRYUidA7e1o9BcOVVlUwjD4f7gibqD5GSsV0e1mtL3O6oM7lEiRFDsc0eq3Ul5fHWxcxtzf93W2KUsIILT5iymLiebzqAZJcq4LpEXV9PIPNcmCTdbC1/QSrOb4Or7PkOa34Adavs33yGnmSLud9EHUrc0ZwyydklkMZmcGwAva2a5kzE0bvvyWODHHM8pxPX0ztsMVhfQHA==</SignatureValue>
+					<KeyInfo>
+						<X509Data>
+							<X509IssuerSerial>
+								<X509IssuerName>CN=A.C. 2 de pruebas(4096),O=Servicio de Administración Tributaria,OU=Administración de Seguridad de la Información,emailAddress=asisnet@pruebas.sat.gob.mx,street=Av. Hidalgo 77, Col. Guerrero,postalCode=06300,C=MX,ST=Distrito Federal,L=Coyoacán,x500UniqueIdentifier=SAT970701NN3,unstructuredName=Responsable: ACDMA</X509IssuerName>
+								<X509SerialNumber>286524172099382162235533054548081509963388106800</X509SerialNumber>
+							</X509IssuerSerial>
+							<X509Certificate>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</X509Certificate>
+						</X509Data>
+					</KeyInfo>
+				</Signature>
+			</des:solicitud>
+		</des:SolicitaDescarga>
+	</s:Body>
+</s:Envelope>

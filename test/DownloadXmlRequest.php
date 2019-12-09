@@ -1,7 +1,4 @@
 <?php
-namespace SWServices\DescMass;
-use Exception;
-
 class DownloadXmlRequest{
     public static function soapRequest($cert, $keyPEM, $token, $rfc, $idPaquete){
         $xmlString = DownloadXmlRequest::getSoapBody($cert, $keyPEM, $rfc, $idPaquete);
