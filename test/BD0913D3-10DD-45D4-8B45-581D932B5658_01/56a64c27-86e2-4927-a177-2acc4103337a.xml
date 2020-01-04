@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Fecha="2018-12-31T02:09:38" TipoDeComprobante="I" FormaPago="01" CondicionesDePago="CONTADO" SubTotal="126988.43" Total="147306.58" Moneda="MXN" TipoCambio="1" MetodoPago="PUE" LugarExpedicion="68000" Folio="11" Serie="OAX" NoCertificado="00001000000411956602" Sello="trXh6kdVwP1KtzQQ+zKBKOZ/dZk28ObmYmGB6F8BlvlFR0RuCK8hyNVl+EF/QiTP62tkdob1ZibGUO6UxrLAPk5z9d9f2RFKFlhZYxaOhy47tfIMqGqxNAeeXnGLXABy1AmoliStYAh/PwjSGuuX2/DjMtupr6rgggb+i1Eae0DnnWMxIP3d9L8qUOJRlNy3S3KfLjFEHZGMxr4qEe1oVHDwl96c5FR96JqLXF/TbmaSBfHYB7+xVEbVTdKv9a97r0Y+XBTVX8c7pK9pJAsR6lwTCV6zqVesphIEOZxF8bkGZ1AHHXcn2hYdWoq7JZ1qvAuNVh+ouD2PBUDKIcVKVA==" Certificado="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">
+  <cfdi:Emisor Rfc="AAT170510949" Nombre="ALTERNATIVAS ATZIN, S. A. DE C.V. SOFOM, E. N. R." RegimenFiscal="601" />
+  <cfdi:Receptor Rfc="XAXX010101000" Nombre="PUBLICO EN GENERAL" UsoCFDI="G03" />
+  <cfdi:Conceptos>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="84141502" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="INTERESES NORMALES DEL 01 AL 31 DE DICIEMBRE DE 2018" ValorUnitario="123363.76" Importe="123363.76">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="123363.76" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="19738.2016" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="84141502" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="INTERESES MORATORIOS DEL 01 AL 31 DE DICIEMBRE DE 2018" ValorUnitario="288.87" Importe="288.87">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="288.87" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="46.2192" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="01010101" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="BURO DE CREDITO DEL 01 AL 31 DE DICIEMBRE DE 2018" ValorUnitario="991.30" Importe="991.30">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="991.30" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="158.6080" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="01010101" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="SERVICIO DE RECARGAS DEL 01 AL 31 DE DICIEMBRE DE 2018" ValorUnitario="60.20" Importe="60.20">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="60.20" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="9.6320" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="01010101" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="GASTOS DE COBRANZA DEL 01 AL 31 DE DICIEMBRE DE 2018" ValorUnitario="2284.30" Importe="2284.30">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="2284.30" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="365.4880" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="20318.15">
+    <cfdi:Traslados>
+      <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="20318.15" />
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" Version="1.1" UUID="B85F4694-0EBE-11E9-9CDB-C703AD69A548" FechaTimbrado="2019-01-02T12:46:31" RfcProvCertif="FMO1007168C6" SelloCFD="trXh6kdVwP1KtzQQ+zKBKOZ/dZk28ObmYmGB6F8BlvlFR0RuCK8hyNVl+EF/QiTP62tkdob1ZibGUO6UxrLAPk5z9d9f2RFKFlhZYxaOhy47tfIMqGqxNAeeXnGLXABy1AmoliStYAh/PwjSGuuX2/DjMtupr6rgggb+i1Eae0DnnWMxIP3d9L8qUOJRlNy3S3KfLjFEHZGMxr4qEe1oVHDwl96c5FR96JqLXF/TbmaSBfHYB7+xVEbVTdKv9a97r0Y+XBTVX8c7pK9pJAsR6lwTCV6zqVesphIEOZxF8bkGZ1AHHXcn2hYdWoq7JZ1qvAuNVh+ouD2PBUDKIcVKVA==" NoCertificadoSAT="00001000000401477845" SelloSAT="VAsL/dr7cJPpC8xG/NGZwZLL1xs8e6LsOanuY8PekTONyWCjELyay8g2JQI7cg9CaiL7c8+sY4e7JvOXmF/pbogSR4DyN1vpnW90Uw9q3OFP+OzW12Fl/Hb4JWKcYueH4ByIU59ex4EttI/+D0M7Vwg/KcqxhWHyqmzo73e+NWCE3gRCrgXreUNmVRaHC/wKoiqODedP5ttpm22V3o/miA+esk1WFuEEGNiOF2Wb/dLgpd8c/+89jgT8qvc747LZcaaXpaehAgpSt3GNkNETcGKUgovdoGu5g4ETkCCPc3CDmW5Ig1E3D26xhzch2vyTVDnHEk1boRCvwiutvhdd/w==" />
+  </cfdi:Complemento>
+</cfdi:Comprobante>

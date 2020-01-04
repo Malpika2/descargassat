@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Fecha="2019-03-06T12:42:55" TipoDeComprobante="I" FormaPago="01" CondicionesDePago="CONTADO" SubTotal="134800.47" Total="156368.55" Moneda="MXN" TipoCambio="1" MetodoPago="PUE" LugarExpedicion="68000" Folio="20" Serie="OAX" NoCertificado="00001000000411956602" Sello="NkiKF16pskUL72402b1rCdKnfdGiAeEQXTVPQwRwV0ac2yienA3eKhOLJfYOHEbcSTnUBL0iD62Sc3hsMi+seFCjHeW/9iKqMIcex5c0iu2f6sHl+cO9t3ThD/TFcv5ZVCKX/fTWafJz8NMz6MDhSAlyjeND0S2/1YKrI4+E6aEW4gd3jjtBZQGGUiWYcvrxbYfdicjD4QFm42pIjOvNM4qV4wAGzsPRu4eo56dksHkuT7FCE7qkzqV+7V2fpEro/NA6MKS4FlOI7tPN18LPavdVhbF4rdrvnuxfVrALwAy/xs5ovaTeEDbKvXSZtOW6shEE5uJUkem9N9ZrxFV6Mg==" Certificado="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">
+  <cfdi:Emisor Rfc="AAT170510949" Nombre="ALTERNATIVAS ATZIN, S. A. DE C.V. SOFOM, E. N. R." RegimenFiscal="601" />
+  <cfdi:Receptor Rfc="XAXX010101000" Nombre="PUBLICO EN GENERAL" UsoCFDI="G03" />
+  <cfdi:Conceptos>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="84141502" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="INTERESES NORMALES DEL 01 DE FEBRERO AL 28 DE FEBRERO 2019" ValorUnitario="126282.67" Importe="126282.67">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="126282.67" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="20205.2272" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="84141502" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="INTERESES MORATORIOS DEL 01 AL 28 DE FEBRERO 2019" ValorUnitario="1935.49" Importe="1935.49">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="1935.49" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="309.6784" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="01010101" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="GASTOS DE COBRANZA DEL 01 AL 28 DE FEBRERO DE 2019" ValorUnitario="2284.30" Importe="2284.30">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="2284.30" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="365.4880" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="01010101" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="BURO DE CREDITO DEL 01 AL 28 DE FEBRERO DE 2019" ValorUnitario="991.30" Importe="991.30">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="991.30" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="158.6080" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="01010101" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="SERVICIO DE RECARGAS DEL 01 AL 28 DE FEBRERO DE 2019" ValorUnitario="73.96" Importe="73.96">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="73.96" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="11.8336" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto NoIdentificacion="1" ClaveProdServ="01010101" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="COMISIONES POR OTORGAMIENTO DE CREDITO " ValorUnitario="3232.75" Importe="3232.75">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="3232.75" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="517.2400" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="21568.08">
+    <cfdi:Traslados>
+      <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="21568.08" />
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" Version="1.1" UUID="D66B698E-4040-11E9-A4BF-97FAA27AB81B" FechaTimbrado="2019-03-06T12:51:23" RfcProvCertif="FMO1007168C6" SelloCFD="NkiKF16pskUL72402b1rCdKnfdGiAeEQXTVPQwRwV0ac2yienA3eKhOLJfYOHEbcSTnUBL0iD62Sc3hsMi+seFCjHeW/9iKqMIcex5c0iu2f6sHl+cO9t3ThD/TFcv5ZVCKX/fTWafJz8NMz6MDhSAlyjeND0S2/1YKrI4+E6aEW4gd3jjtBZQGGUiWYcvrxbYfdicjD4QFm42pIjOvNM4qV4wAGzsPRu4eo56dksHkuT7FCE7qkzqV+7V2fpEro/NA6MKS4FlOI7tPN18LPavdVhbF4rdrvnuxfVrALwAy/xs5ovaTeEDbKvXSZtOW6shEE5uJUkem9N9ZrxFV6Mg==" NoCertificadoSAT="00001000000401477845" SelloSAT="sNGraMjSLW2DCVzE8iBWfl2z2PTPRPJpX5JBhjTH6ke0oEI2mAjmWMFY9HcfXzA5RH2pverWiYftO2a+iBLG7zhg6hZqTviDfSrmj5zLCHryvEZmfPvaBYLrJRbElfg04z2vrU6IulA628T8lcCKh0tFro6HfXV+bA/g7j/MNEZuURpFs8VLtDsVxuR4m2anhrnTby/Bit8DK7WEgCrG/DMN3wJ51fNz2sMjNcQLVhaHSUai1NOW64vgebuywbk5g+weXNBA8WQvOoO8yoknxmJJ10cKKNYwCWZ/MrdMRwUEHm3B2OYscIMoYyTsFjX4RChEy0AB2amavw2I4/oJPw==" />
+  </cfdi:Complemento>
+</cfdi:Comprobante>

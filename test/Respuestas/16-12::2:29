@@ -1,0 +1,127 @@
+object(stdClass)#3 (3) { ["IdSolicitud"]=> string(36) "28460da6-dcb4-4d2e-8ea5-6d9e39ad49d9" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" }
+object(stdClass)#6 (5) { ["EstadoSolicitud"]=> string(1) "0" ["CodEstatus"]=> string(3) "300" ["Mensaje"]=> string(15) "Token invalido." ["CodigoEstadoSolicitud"]=> NULL ["NumeroCFDIs"]=> string(1) "0" } 
+
+
+
+
+
+18-12::06:00
+object(stdClass)#3 (3) { ["IdSolicitud"]=> string(36) "fe6ff8e6-57f9-44e4-aa36-df2f7dad4d1d" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" }
+
+object(stdClass)#6 (5) { ["EstadoSolicitud"]=> string(1) "5" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" ["CodigoEstadoSolicitud"]=> string(4) "5004" ["NumeroCFDIs"]=> string(1) "0" } 
+
+
+object(stdClass)#3 (5) { ["EstadoSolicitud"]=> string(1) "5" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" ["CodigoEstadoSolicitud"]=> string(4) "5004" ["NumeroCFDIs"]=> string(1) "0" } 
+fe6ff8e6-57f9-44e4-aa36-df2f7dad4d1d
+object(stdClass)#3 (5) { ["EstadoSolicitud"]=> string(1) "5" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" ["CodigoEstadoSolicitud"]=> string(4) "5004" ["NumeroCFDIs"]=> string(1) "0" } 
+
+
+Nuevas fechas
+
+object(stdClass)#3 (3) { ["IdSolicitud"]=> string(36) "3fa42774-c30b-4400-8b8e-4eddbc16e557" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" } 
+object(stdClass)#3 (6) { ["EstadoSolicitud"]=> string(1) "3" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" ["CodigoEstadoSolicitud"]=> string(4) "5000" ["NumeroCFDIs"]=> string(2) "43" ["idPaquete"]=> string(39) "3FA42774-C30B-4400-8B8E-4EDDBC16E557_01" } 
+object(stdClass)#3 (1) {
+  ["Paquete"]=>
+  string(3276) "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"
+}
+
+
+Descargas CFDI  //Solicitud  Pendiente de respuesta 
+object(stdClass)#1 (1) { ["token"]=> string(395) "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE1NzY3NzY4MzgsImV4cCI6MTU3Njc3NzQzOCwiaWF0IjoxNTc2Nzc2ODM4LCJpc3MiOiJMb2FkU29saWNpdHVkRGVjYXJnYU1hc2l2YVRlcmNlcm9zIiwiYWN0b3J0IjoiMzAzMDMwMzAzMTMwMzAzMDMwMzAzMDM0MzAzNjMyMzczOTMwMzQzMiJ9.NmwvbSPWGkvFTKMA_aBQoauLiIlMfE1XyP7XiTrH1xE%26wrap_subject%3d3030303031303030303030343036323739303432" }
+object(stdClass)#3 (3) { ["IdSolicitud"]=> string(36) "9aa84ad6-3b5a-4f87-a4cf-7f8a3669a8ce" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" }
+object(stdClass)#6 (5) { ["EstadoSolicitud"]=> string(1) "2" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" ["CodigoEstadoSolicitud"]=> string(4) "5000" ["NumeroCFDIs"]=> string(1) "0" }
+object(stdClass)#2 (1) { ["Paquete"]=> array(0) { } } 
+
+//Nuevo 
+object(stdClass)#3 (5) { ["EstadoSolicitud"]=> string(1) "2" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" ["CodigoEstadoSolicitud"]=> string(4) "5000" ["NumeroCFDIs"]=> string(1) "0" } 
+ 20-12-2019 11:33am
+
+
+////////////PENDIENTE DE RESPUESTA 1 ////////////PENDIENTE DE RESPUESTA 1 ////////////PENDIENTE DE RESPUESTA 1 ////////////PENDIENTE DE RESPUESTA 1 
+SOLICITAR CONSULTA DE CFDIs
+object(stdClass)#3 (3) { ["IdSolicitud"]=> string(36) "bd0913d3-10dd-45d4-8b45-581d932b5658" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" }
+VERIFICAR ESTATUS DE LA SOLICITUD
+object(stdClass)#6 (5) { ["EstadoSolicitud"]=> string(1) "2" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" ["CodigoEstadoSolicitud"]=> string(4) "5000" ["NumeroCFDIs"]=> string(1) "0" }
+OBTENER PAQUETE
+id_paquete:
+object(stdClass)#2 (1) { ["Paquete"]=> array(0) { } }
+DESCARGAR PAQUETE
+SOLICITAR CONSULTA DE CFDIs
+
+  VERIFICAR ESTATUS DE LA SOLICITUD
+  object(stdClass)#3 (6) { ["EstadoSolicitud"]=> string(1) "3" ["CodEstatus"]=> string(4) "5000" ["Mensaje"]=> string(18) "Solicitud Aceptada" ["CodigoEstadoSolicitud"]=> string(4) "5000" ["NumeroCFDIs"]=> string(2) "43" ["idPaquete"]=> string(39) "BD0913D3-10DD-45D4-8B45-581D932B5658_01" } 
+
+
+
+////////////PENDIENTE DE RESPUESTA 2  ////////////PENDIENTE DE RESPUESTA 2 ////////////PENDIENTE DE RESPUESTA 2 ////////////PENDIENTE DE RESPUESTA 2 
+</br><br>object(stdClass)#3 (3) {
+  ["IdSolicitud"]=>
+  string(36) "c8f51ba3-4e5e-4f14-9090-1ec5795ed602"
+  ["CodEstatus"]=>
+  string(4) "5000"
+  ["Mensaje"]=>
+  string(18) "Solicitud Aceptada"
+}
+</br>VERIFICAR ESTATUS DE LA SOLICITUD<br>object(stdClass)#6 (5) {
+  ["EstadoSolicitud"]=>
+  string(1) "1"
+  ["CodEstatus"]=>
+  string(4) "5000"
+  ["Mensaje"]=>
+  string(18) "Solicitud Aceptada"
+  ["CodigoEstadoSolicitud"]=>
+  string(4) "5000"
+  ["NumeroCFDIs"]=>
+  string(1) "0"
+}
+</br>OBTENER PAQUETE<br>id_paquete: <br>object(stdClass)#2 (1) {
+  ["Paquete"]=>
+  array(0) {
+  }
+}
+<!-- ESTATUS DE LA SOLICITUD --> 
+<!--    Aceptada=1
+        EnProceso=2
+        Terminada=3
+        Error=4
+        Rechazada=5
+        Vencida=6 
+-->
+////////////PENDIENTE DE RESPUESTA 3  ////////////PENDIENTE DE RESPUESTA 3 ////////////PENDIENTE DE RESPUESTA 3 ////////////PENDIENTE DE RESPUESTA 3 
+
+</br><br>object(stdClass)#3 (3) {
+  ["IdSolicitud"]=>
+  string(36) "4d7d3c59-0dd4-4fd1-a614-8c6159633a79"
+  ["CodEstatus"]=>
+  string(4) "5000"
+  ["Mensaje"]=>
+  string(18) "Solicitud Aceptada"
+}
+</br>VERIFICAR ESTATUS DE LA SOLICITUD<br>object(stdClass)#6 (5) {
+  ["EstadoSolicitud"]=>
+  string(1) "2"
+  ["CodEstatus"]=>
+  string(4) "5000"
+  ["Mensaje"]=>
+  string(18) "Solicitud Aceptada"
+  ["CodigoEstadoSolicitud"]=>
+  string(4) "5000"
+  ["NumeroCFDIs"]=>
+  string(1) "0"
+}
+</br>OBTENER PAQUETE<br>id_paquete: <br>object(stdClass)#2 (1) {
+  ["Paquete"]=>
+  array(0) {
+  }
+}
+<!-- ESTATUS DE LA SOLICITUD --> 
+<!--    Aceptada=1
+        EnProceso=2
+        Terminada=3
+        Error=4
+        Rechazada=5
+        Vencida=6 
+-->
+
+
+9d4689eb-454d-4557-a7ae-77def9123775
