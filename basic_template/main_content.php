@@ -50,9 +50,9 @@
                     </form>
                 </div>
                 <div class="col-md-12 border border-primary" id="div_validar" style="display:none">
-                    <form action="" id="form_verificar_consulta" enctype="multipart/form-data">
+                    <!-- <form action="" id="form_verificar_consulta" enctype="multipart/form-data"> -->
                         <button type="button" class="btn btn-primary btn-block" onclick="funciones('verificar_consulta');">Verificar estatus de la consulta</button>
-                    </form>
+                    <!-- </form> -->
                 </div>
                 <div class="col-md-12 border border-danger" id="div_descargar" style="display:none">
                     <form action="" id="descargar" enctype="multipart/form-data">
@@ -76,18 +76,26 @@
                 <div class="col-md-6">
                     <div class="col-md-12 text-center">
                         <h3>Tabla Historial</h3>
+                        Aceptada=1
+EnProceso=2
+Terminada=3
+Error=4
+Rechazada=5
+Vencida=6
                         <table class="table table-bordered">
                             <thead>
-                                <th>1</th>
-                                <th>1</th>
-                                <th>1</th>
+                                <th>IdSolictud</th>
+                                <th>Cod Estatus</th>
+                                <th>Respuesta</th>
+                                <th>Estado Solicitud</th>
+                                <th>Fecha Inicial</th>
+                                <th>Fecha Final</th>
+                                <th>Fecha Consulta</th>
+                                <th>Actualizar</th>
+                                <th>Descargar</th>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>asdas</td>
-                                    <td>1223</td>
-                                    <td>1223</td>
-                                </tr>
+                            <tbody id="tablaHistorial">
+                                
                             </tbody>
                         </table>
                     </div>
@@ -103,6 +111,11 @@
     </div>
 </main>
 <script>
+
+window.onload = function() {
+
+  actualizarRegistros();
+};
 cambiarDiv = function(divname){
     $('#divFormularios').children('div').each(function () {
         this.style.display = 'none';
@@ -112,8 +125,8 @@ cambiarDiv = function(divname){
 
     });
 }
-funciones = function(funcion){
-    var formData = new FormData(document.getElementById("form_"+funcion));
+funciones = function(funcion,aux=''){
+    var formData = new FormData(document.getElementById("form_"+funcion+''+aux));
     formData.append("accion",funcion);
     if (funcion=='login') {
         formData.append( "cert", $('#cert')[0].files[0]);
@@ -131,8 +144,67 @@ funciones = function(funcion){
         success:function(data){
             $('#divRespuesta').html('<p style="overflow:scroll">'+data+'</p>');
             if (funcion=='login') {
-                // location.reload();
+                location.reload();
             }
+            if (funcion == 'solicitar_consulta'){
+                actualizarRegistros();
+            }
+            if (funcion == 'verificar_consulta'){
+                actualizarRegistros();
+            }
+        }
+    });
+    return false;
+}
+
+actualizarRegistros = function(){
+    $.ajax({
+        type:"POST",
+        url:"functions.php",
+        data:{accion:'actualizarRegistros'},
+        cache:false,
+        success:function(data){
+            // console.log(data);Ç
+            datos = JSON.parse(data);
+            console.log(datos);
+            $('#tablaHistorial').html('');
+            $.each(datos, function(index, item){
+                if(item[3]==1){var estado ='ACEPTADA'; }
+                else if(item[3]==2){var estado ='EN PROCESO';}
+                else if(item[3]==3){var estado ='<button type="button" class="btn btn-success" onClick="funciones(\'descargar_paquete\',\''+index+'\')">DESCARGAR</button>';}
+                else if(item[3]==4){var estado ='ERROR';}
+                else if(item[3]==5){var estado ='RECHAZADA';}
+                else if(item[3]==6){var estado ='VENCIDA';}
+                else {var estado ='Verificar estatus';}
+                $('#tablaHistorial').append('<tr>'+
+                    '<td>'+item[0]+'</td>'+
+                    '<td>'+item[2]+'</td>'+
+                    '<td>'+item[4]+'</td>'+
+                    '<td><form action="" id="form_descargar_paquete'+index+'" enctype="multipart/form-data">'+
+                            '<input type="hidden" value="'+item[0]+'" name="id_solicitud">'+
+                            '<input type="hidden" value="'+item[5]+'" name="idPaquete">'+
+                            '<input type="hidden" value="'+item[11]+'" name="rfc">'+
+                            '<input type="hidden" value="'+item[12]+'" name="cer64">'+
+                            '<input type="hidden" value="'+item[13]+'" name="key64">'+
+                            ''+estado+
+                            '</form>'+
+                    '</td>'+
+                    '<td>'+item[7]+'</td>'+
+                    '<td>'+item[8]+'</td>'+
+                    '<td>'+item[14]+'</td>'+
+                    '<td><form action="" id="form_verificar_consulta'+index+'" enctype="multipart/form-data">'+
+                            '<input type="hidden" value="'+item[0]+'" name="id_solicitud">'+
+                            '<input type="hidden" value="'+item[1]+'" name="IdSolicitud">'+
+                            '<input type="hidden" value="'+item[10]+'" name="token">'+
+                            '<input type="hidden" value="'+item[11]+'" name="rfc">'+
+                            '<input type="hidden" value="'+item[12]+'" name="cer64">'+
+                            '<input type="hidden" value="'+item[13]+'" name="key64">'+
+                            '<button type="button" class="btn btn-info" onclick="funciones(\'verificar_consulta\',\''+index+'\')">Verificar estatus</button>'+
+                        '</form></td>'+
+                    '<td></td>'+
+                '</tr>');
+                // console.log(item);
+            });
         }
     });
     return false;
