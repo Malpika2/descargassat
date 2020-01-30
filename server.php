@@ -1,12 +1,6 @@
 <?php
 require_once "lib/nusoap.php";
 $namespace = "http://localhost/descargassat/server.php";
-// $server = new soap_server();
-// $server->configureWSDL("consulta",$namespace);
-// $server->wsdl->schemaTargetNamespace = $namespace;
-// $server->soap_defencoding = 'utf-8';
-
-
 $server = new soap_server();
 
 $server->soap_defencoding = 'utf-8';
@@ -16,25 +10,7 @@ $server->decode_utf8 = false;
 $server->encode_utf8 = false;
 $server->decode_utf8 = false;
 $server->configureWSDL("WStest", "urn:WStest");
-// $server->configureWSDL('WStest', 'urn:WStest', $namespace);
-//Create a complex type
 
-$server->wsdl->addComplexType(  'datos_persona_entrada', 
-                                'complexType', 
-                                'struct', 
-                                'all', 
-                                '',
-                                array('key'              => array('name' => 'key','type' => 'xsd:string'),
-                                      'cert'              => array('name' => 'cert','type' => 'xsd:string'))
-);
-// Parametros de Salida
-$server->wsdl->addComplexType(  'datos_persona_salida', 
-                                'complexType', 
-                                'struct', 
-                                'all', 
-                                '',
-                                array('mensaje'   => array('name' => 'mensaje','type' => 'xsd:string'))
-);
 $server->wsdl->addComplexType(  'arrayResponse',
                                 'complexType',
                                 'struct',
@@ -69,14 +45,6 @@ $server->wsdl->addComplexType( 'downloadResponse',
 /*************************/
 /** Registro de métodos **/
 /*************************/
-    $server->register("Test",
-                        array("datos_entrada" => "tns:datos_entrada"),
-                        array("return" => "xsd:string"),
-                        "urn:WStest",
-                        "urn:WStest#Test",
-                        "rpc",
-                        "encoded",
-                         "Enviar mail de aviso");
 
     $server->register("autentificacion",
         array('key' => 'xsd:string','cert'=>'xsd:string'), // parametros de entrada
@@ -105,14 +73,6 @@ $server->wsdl->addComplexType( 'downloadResponse',
         "encoded",
         "Verifica estatus de la consulta");
 
-    // $server->register('descargar',
-    //     array("certificado"=>"xsd:string","archivo_key"=>"xsd:string","token"=>"xsd:string","rfc"=>"xsd:string","idPaquete"=>"xsd:string"),
-    //     array("return"=>"xsd:string"),
-    //     "urn:WStest",
-    //     "urn:WStest#descargar",
-    //     "rpc",
-    //     "encoded",
-    //     "Solicita descarga");
         
     $server->register('descargar_paquete',
         array("cert"=>"xsd:string","key"=>"xsd:string","rfc"=>"xsd:string","idPaquete"=>"xsd:string"),
@@ -123,50 +83,15 @@ $server->wsdl->addComplexType( 'downloadResponse',
         "encoded",
         "Descarga paquete");
 
-    $server->register('calculo_edades', // nombre del metodo o funcion
-        array('datos_persona_entrada' => 'tns:datos_persona_entrada'), // parametros de entrada
-        array('return' => 'tns:datos_persona_salida'), // parametros de salida
-        'urn:mi_ws1', // namespace
-        'urn:hellowsdl2#calculo_edades', // soapaction debe ir asociado al nombre del metodo
-        'rpc', // style
-        'encoded', // use
-        'La siguiente funcion recibe un arreglo multidimensional de personas y calcula las Edades respectivas segun la fecha de nacimiento indicada' // documentation,
-         //$encodingStyle
-);
+
         
                                         /*=========================
                                                 :::METODOS:::
                                         ===========================*/
-    function calculo_edades($datos) {
-        // error_log (json_encode($datos), 3, 'error_log.php');
-        $msg = '';  
-        // Recorro el arreglo de datos enviados
-        error_log($datos['cert'],3,'error_log.php');
-        foreach ($datos as  $value){
-            // error_log ($value, 3, 'error_log.php');
-            // $edad_actual = date('Y') - $value['FechaNacimiento'];
-            // $msg .= 'La edad de '. $value['nombre'] .' es:' . $edad_actual . ' años ==== <br />'; 
-        }
-        return array('mensaje' => $msg);
-    }
-        
-    function Test($datos) {
 
-        foreach ($datos as $key => $value){
-            error_log ($value['certs'], 3, 'error_log.php');
-        }
-        return $datos;
-    }
-    function autentificacion($key,$cert){
-            // error_log (json_encode($datos), 3, 'error_log.php');
-            // error_log($cert,3,'error_log.php');
-
-            $certificado = base64_decode($cert);
-            $keyPEM = base64_decode($key);
-        // $certificado = $datos['cert'];
-        // $keyPEM = $datos['key'];
-
-        
+    function autentificacion($key,$cert){ // Regresa TOKEN ya que expira cada 5 min
+        $certificado = base64_decode($cert);
+        $keyPEM = base64_decode($key);
         $xmlString = getSoapBody($certificado,$keyPEM);
         
         $headers = headers($xmlString, 'http://DescargaMasivaTerceros.gob.mx/IAutenticacion/Autentica', null);
@@ -190,16 +115,14 @@ $server->wsdl->addComplexType( 'downloadResponse',
             
         curl_close($ch);
         
-        // error_log($datos['cert'],3,'error_log.php');
+        
         if($err){
             throw new Exception("CUrl Error #:" .$err);
         }else{
-            // error_log(response(xmlToArray($soap))->token , 3,'error_log.php');
             return response(xmlToArray($soap))->token;
         }
     }
     function solicitar_descarga($cert64, $key64, $token,$rfc, $fechaInicial, $fechaFinal, $TipoSolicitud){
-        // error_log($cert64,3,'error_log.php');
         $token = autentificacion($key64,$cert64);
 
         $cert = base64_decode($cert64);
@@ -241,21 +164,13 @@ $server->wsdl->addComplexType( 'downloadResponse',
             throw new Exception("cURL Error #:" . $err);
         } else{ 
             $respuesta = responseRequest(xmlToArray($soap));
-            
-            // error_log('IdSolicitud: '.$respuesta->IdSolicitud , 3 , 'error_log.php');
-            // error_log('CodEstatus: '.$respuesta->CodEstatus , 3 , 'error_log.php');
-            // error_log('Mensaje '.$respuesta->Mensaje , 3 , 'error_log.php');
-            $arrayResponse = array('IdSolicitud'=>$respuesta->IdSolicitud,'CodEstatus'=>$respuesta->CodEstatus,'Mensaje'=>$respuesta->Mensaje );
-            // $arrayResponse = array('CodEstatus'=>$respuesta->CodEstatus);
-            // $arrayResponse = array('Mensaje'=>$respuesta->Mensaje);
 
-            // error_log(json_encode($respuesta));
+            $arrayResponse = array('IdSolicitud'=>$respuesta->IdSolicitud,'CodEstatus'=>$respuesta->CodEstatus,'Mensaje'=>$respuesta->Mensaje );
             error_log(json_encode($arrayResponse));
             return $arrayResponse;
         }
     }
     function verificar_consulta($cert64, $key64, $token, $rfc, $IdSolicitud){
-            // error_log($cert64,3,'error_log.php');
 
         $token = autentificacion($key64,$cert64);
 
@@ -286,7 +201,6 @@ $server->wsdl->addComplexType( 'downloadResponse',
             throw new Exception("cURL Error #:" . $err);
         } else{
             $respuesta = responseVerif(xmlToArray($soap));
-            // error_log(json_encode($respuesta),3,'error_log.php'); 
             $EstadoSolicitud = $respuesta->EstadoSolicitud;
 
             if (null!=$respuesta->idPaquete) {

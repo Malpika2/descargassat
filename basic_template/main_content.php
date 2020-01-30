@@ -19,15 +19,7 @@
                     
                        <?php if(isset($_SESSION['token'])){ ?><button type="button" class="btn btn-secondary btn-block" onclick="cambiarDiv('solicitar');">Solicitar consulta</button><?php }?>
                     </div>
-                    <div class="col-md-4">
-                       <?php if(isset($_SESSION['token'])){ ?><button type="button" class="btn btn-primary btn-block" onclick="cambiarDiv('validar');">Verificar estatus de la consulta</button><?php }?>
-                    </div>
-                    <div class="col-md-4">                
-                       <?php if(isset($_SESSION['token'])){ ?><button type="button" class="btn btn-danger btn-block" onclick="cambiarDiv('descargar');">Obtener paquete</button><?php }?>
-                    </div>
-                    <div class="col-md-4">
-                       <?php if(isset($_SESSION['token'])){ ?><button type="button" class="btn btn-success btn-block" onclick="cambiarDiv('paquete');">Descargar paquete</button><?php }?>
-                    </div>
+                    
                 </div>
                 <div id="divFormularios" class="col-md-12">
                 <div class="col-md-12 border border-info" id="div_login" style="display:none">
