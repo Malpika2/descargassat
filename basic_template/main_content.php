@@ -8,7 +8,8 @@
         <div class="justify-content-center d-flex align-content-center flex-wrap">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1>DESCARGA MASIVA  CFDI SAT</h1>
+                    <h1>DESCARGA MASIVA  CFDI SAT1</h1>
+                    <h3>Modo descarga de recibidos S-121-142</h3>
                 </div>  
                 <div class="col-md-12 row">
                     <div class="col-md-4">
@@ -19,7 +20,7 @@
                     
                        <?php if(isset($_SESSION['token'])){ ?><button type="button" class="btn btn-secondary btn-block" onclick="cambiarDiv('solicitar');">Solicitar consulta</button><?php }?>
                     </div>
-                    
+
                 </div>
                 <div id="divFormularios" class="col-md-12">
                 <div class="col-md-12 border border-info" id="div_login" style="display:none">
@@ -63,17 +64,19 @@
                         <div class="col-md-12 responsive " id="divRespuesta">
 
                         </div>
+                        <div class="col-md-12 row">
+                            <div class="col-md-2">Aceptada: 1</div>
+                            <div class="col-md-2">EnProceso: 2</div>
+                            <div class="col-md-2">Terminada: 3</div>
+                            <div class="col-md-2">Error: 4</div>
+                            <div class="col-md-2">Rechazada: 5</div>
+                            <div class="col-md-2">Vencida: 6     </div>
+                    </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="col-md-12 text-center">
                         <h3>Tabla Historial</h3>
-                        Aceptada=1
-EnProceso=2
-Terminada=3
-Error=4
-Rechazada=5
-Vencida=6
                         <table class="table table-bordered">
                             <thead>
                                 <th>IdSolictud</th>
