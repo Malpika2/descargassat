@@ -93,7 +93,7 @@ $server->wsdl->addComplexType( 'downloadResponse',
         $certificado = base64_decode($cert);
         $keyPEM = base64_decode($key);
         $xmlString = getSoapBody($certificado,$keyPEM);
-        error_log($xmlString,3,'error_log.php');
+        // error_log($xmlString,3,'error_log.php'); Verificar informacion, en especial formatos de fecha y hora.
         $headers = headers($xmlString, 'http://DescargaMasivaTerceros.gob.mx/IAutenticacion/Autentica', null);
         
         $ch = curl_init();
@@ -121,7 +121,6 @@ $server->wsdl->addComplexType( 'downloadResponse',
             error_log($err,3,'error_log.php');
             throw new Exception("CUrl Error #:" .$err);
         }else{
-            error_log($soap,3,'error_log.php');
             return response(xmlToArray($soap))->token;
         }
     }
