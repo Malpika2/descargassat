@@ -93,8 +93,9 @@ $server->wsdl->addComplexType( 'downloadResponse',
         $certificado = base64_decode($cert);
         $keyPEM = base64_decode($key);
         $xmlString = getSoapBody($certificado,$keyPEM);
-        
+        error_log($xmlString,3,'error_log.php');
         $headers = headers($xmlString, 'http://DescargaMasivaTerceros.gob.mx/IAutenticacion/Autentica', null);
+        
         $ch = curl_init();
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
             curl_setopt($ch, CURLOPT_URL, 'https://cfdidescargamasivasolicitud.clouda.sat.gob.mx/Autenticacion/Autenticacion.svc');
@@ -117,8 +118,10 @@ $server->wsdl->addComplexType( 'downloadResponse',
         
         
         if($err){
+            error_log($err,3,'error_log.php');
             throw new Exception("CUrl Error #:" .$err);
         }else{
+            error_log($soap,3,'error_log.php');
             return response(xmlToArray($soap))->token;
         }
     }
@@ -252,6 +255,7 @@ $server->wsdl->addComplexType( 'downloadResponse',
                                             :::FUNCIONES AUXILIARES:::
                                         ===============================*/
     function getSoapBody($cert,$keyPEM){
+        date_default_timezone_set(DateTimeZone::listIdentifiers(DateTimeZone::UTC)[0]);  // Ajuste de horario Foolproof!XD
         $uuid = "uuid-".genUuid()."-1";
         $fecha_inicial = time();
         $fecha_final = $fecha_inicial+(60*5);
