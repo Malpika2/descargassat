@@ -46,7 +46,7 @@ switch ($_POST['accion']) {
     case 'solicitar_consulta':
         $data = $_POST;
         $fechaInicial = $data['fechaInicial'].'T00:00:00';
-        $fechaFinal = $data['fechaFinal'].'T12:59:59';
+        $fechaFinal = $data['fechaFinal'].'T23:59:59';
         $TipoSolicitud = $data['tipoSolicitud'];
         $rfc = $data['rfc'];
 
