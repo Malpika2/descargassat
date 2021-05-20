@@ -5,10 +5,10 @@ $server = new soap_server();
 
 $server->soap_defencoding = 'utf-8';
 
-$server->encode_utf8 = false;
-$server->decode_utf8 = false;
-$server->encode_utf8 = false;
-$server->decode_utf8 = false;
+$server->encode_utf8 = true;
+$server->decode_utf8 = true;
+$server->encode_utf8 = true;
+$server->decode_utf8 = true;
 $server->configureWSDL("WStest", "urn:WStest");
 
 $server->wsdl->addComplexType(  'arrayResponse',
@@ -98,7 +98,7 @@ $server->wsdl->addComplexType( 'downloadResponse',
         
         $ch = curl_init();
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
-            curl_setopt($ch, CURLOPT_URL, 'https://cfdidescargamasivasolicitud.clouda.sat.gob.mx/Autenticacion/Autenticacion.svc');
+            curl_setopt($ch, CURLOPT_URL, 'https://intgcfdidescargamasivatercerossolicitud.cloudapp.net/Autenticacion/Autenticacion.svc');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
             curl_setopt($ch, CURLOPT_TIMEOUT, 10);
@@ -118,15 +118,16 @@ $server->wsdl->addComplexType( 'downloadResponse',
         
         
         if($err){
-            error_log($err,3,'error_log.php');
             throw new Exception("CUrl Error #:" .$err);
         }else{
+            error_log($soap,3,'error_log.php');
             return response(xmlToArray($soap))->token;
         }
     }
     function solicitar_descarga($cert64, $key64, $token,$rfc, $fechaInicial, $fechaFinal, $TipoSolicitud){
         $token = autentificacion($key64,$cert64);
-
+        // $token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2MjE1NDUzMTYsImV4cCI6MTYyMTU0NTkxNiwiaWF0IjoxNjIxNTQ1MzE2LCJpc3MiOiJMb2FkU2VydmljaW9EZWNhcmdhTWFzaXZhVGVyY2Vyb3MiLCJhY3RvcnQiOiIzMDMwMzAzMDMxMzAzMDMwMzAzMDMwMzQzMDM2MzIzNzM5MzAzNDMyIn0.v5QGOlUAo0DpDKyst4zG40jaDbUjR4hoByit1EBU2VY&wrap_subject=3030303031303030303030343036323739303432";
+                     
         $cert = base64_decode($cert64);
         $key = base64_decode($key64);
         
@@ -141,12 +142,55 @@ $server->wsdl->addComplexType( 'downloadResponse',
         $datos .= $key.'='.$value.',';
         }
         $datos = substr($datos, 0, -1);
-        $xml = '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:des="http://DescargaMasivaTerceros.sat.gob.mx" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"><s:Header/><s:Body><des:SolicitaDescarga><des:solicitud RfcEmisor="'.$rfc.'" RfcReceptor="" RfcSolicitante="'.$rfc.'" FechaFinal="'.$fechaFinal.'" FechaInicial="'.$fechaInicial.'" TipoSolicitud="'.$TipoSolicitud.'"><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></SignatureMethod><Reference URI="#_0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></Transform></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod><DigestValue>'.$digestValue.'</DigestValue></Reference></SignedInfo><SignatureValue>'.base64_encode($digs).'</SignatureValue><KeyInfo><X509Data><X509IssuerSerial><X509IssuerName>'.$datos.'</X509IssuerName><X509SerialNumber>'.$serialNumber.'</X509SerialNumber></X509IssuerSerial><X509Certificate>'.base64_encode($cert).'</X509Certificate></X509Data></KeyInfo></Signature></des:solicitud></des:SolicitaDescarga></s:Body></s:Envelope>';
+        // $xml = '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:des="http://DescargaMasivaTerceros.sat.gob.mx" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"><s:Header/><s:Body><des:SolicitaDescarga><des:solicitud RfcEmisor="'.$rfc.'" RfcReceptor="" RfcSolicitante="'.$rfc.'" FechaFinal="'.$fechaFinal.'" FechaInicial="'.$fechaInicial.'" TipoSolicitud="'.$TipoSolicitud.'"><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></SignatureMethod><Reference URI="#_0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></Transform></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod><DigestValue>'.$digestValue.'</DigestValue></Reference></SignedInfo><SignatureValue>'.base64_encode($digs).'</SignatureValue><KeyInfo><X509Data><X509IssuerSerial><X509IssuerName>'.$datos.'</X509IssuerName><X509SerialNumber>'.$serialNumber.'</X509SerialNumber></X509IssuerSerial><X509Certificate>'.base64_encode($cert).'</X509Certificate></X509Data></KeyInfo></Signature></des:solicitud></des:SolicitaDescarga></s:Body></s:Envelope>';
+        $xml = '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+        <s:Header>
+            <ActivityId CorrelationId="cf93548a-3e21-4f87-af85-bf75deacd99b" xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">a864a1d1-d53f-43fb-b51f-38534d2200a4</ActivityId>
+            <VsDebuggerCausalityData xmlns="http://schemas.microsoft.com/vstudio/diagnostics/servicemodelsink ">uIDPo7neno+Sl2FKkdV6qpjcky0AAAAAKovS2hKnI0idNzQC8c9rLNTc8PJIAC1Kk3pKgScugj4ACQAA</VsDebuggerCausalityData>
+        </s:Header>
+        <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <SolicitaDescarga xmlns="http://DescargaMasivaTerceros.sat.gob.mx">
+                <solicitud RfcEmisor="'.$rfc.'" RfcSolicitante="'.$rfc.'" FechaFinal="'.$fechaFinal.'" FechaInicial="'.$fechaInicial.'" TipoSolicitud="'.$TipoSolicitud.'">
+                    <RfcReceptores>
+                        <RfcReceptor />
+                    </RfcReceptores>
+                    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                        <SignedInfo>
+                            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+                            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+                            <Reference URI="">
+                                <Transforms>
+                                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                                </Transforms>
+                                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                                <DigestValue>'.$digestValue.'</DigestValue>
+                            </Reference>
+                        </SignedInfo>
+                        <SignatureValue>'.base64_encode($digs).'</SignatureValue>
+                        <KeyInfo>
+                            <X509Data>
+                                <X509IssuerSerial>
+                                    <X509IssuerName>'.$datos.'</X509IssuerName>
+                                    <X509SerialNumber>'.$serialNumber.'</X509SerialNumber>
+                                </X509IssuerSerial>
+                                <X509Certificate>'.base64_encode($cert).'</X509Certificate>
+                            </X509Data>
+                        </KeyInfo>
+                    </Signature>
+                </solicitud>
+            </SolicitaDescarga>
+        </s:Body>
+    </s:Envelope>';
         $xmlString = $xml;
+        error_log('---------',3,'error_log.php');
+        error_log($xmlString,3,'error_log.php');
         $headers = headers($xmlString, 'http://DescargaMasivaTerceros.sat.gob.mx/ISolicitaDescargaService/SolicitaDescarga', $token);
+        error_log('---------',3,'error_log.php');
+        error_log(json_encode($headers),3,'error_log.php');
         $ch = curl_init();
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
-            curl_setopt($ch, CURLOPT_URL, 'https://cfdidescargamasivasolicitud.clouda.sat.gob.mx/SolicitaDescargaService.svc');
+            
+            curl_setopt($ch, CURLOPT_URL, 'https://intgcfdidescargamasivatercerossolicitud.cloudapp.net/SolicitaDescargaService.svc');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
             curl_setopt($ch, CURLOPT_TIMEOUT, 10);
@@ -166,9 +210,12 @@ $server->wsdl->addComplexType( 'downloadResponse',
             throw new Exception("cURL Error #:" . $err);
         } else{ 
             $respuesta = responseRequest(xmlToArray($soap));
-
+            error_log('--SOAP-------',3,'error_log.php');
+            error_log(json_encode($soap),3,'error_log.php');
+            error_log('--RESPUESTA-------',3,'error_log.php');
+            error_log(json_encode($respuesta),3,'error_log.php');
+            
             $arrayResponse = array('IdSolicitud'=>$respuesta->IdSolicitud,'CodEstatus'=>$respuesta->CodEstatus,'Mensaje'=>$respuesta->Mensaje );
-            error_log(json_encode($arrayResponse));
             return $arrayResponse;
         }
     }
@@ -245,7 +292,7 @@ $server->wsdl->addComplexType( 'downloadResponse',
             throw new Exception("cURL Error #:" . $err);
         } else{
             $respuesta =responseDownload(xmlToArray($soap));
-            error_log(json_encode($respuesta),3,'error_log.php');
+            // error_log(json_encode($respuesta),3,'error_log.php');
             $arrayResponse = array('Paquete'=>$respuesta->Paquete);
             return $arrayResponse;
         }
@@ -292,6 +339,10 @@ $server->wsdl->addComplexType( 'downloadResponse',
         return $obj;
     }
     function responseRequest($data){
+        error_log('data:',3,'error_log.php');
+       
+        error_log(json_encode($data),3,'error_log.php');
+        error_log('end_data:',3,'error_log.php');
         $obj = (object)[];
         if(isset($data["Body"]["Fault"])){
           $obj->faultcode = $data["Body"]["Fault"]["faultcode"];
@@ -302,6 +353,7 @@ $server->wsdl->addComplexType( 'downloadResponse',
           $obj->CodEstatus = $data["Body"]["SolicitaDescargaResponse"]["SolicitaDescargaResult"]["@attributes"]["CodEstatus"];
           $obj->Mensaje = $data["Body"]["SolicitaDescargaResponse"]["SolicitaDescargaResult"]["@attributes"]["Mensaje"];
         }
+        
         return $obj;
     }
     function responseVerif($data){
@@ -362,7 +414,12 @@ $server->wsdl->addComplexType( 'downloadResponse',
         );
     }
     function xmlToArray($xml){
-        return json_decode(json_encode(simplexml_load_string(str_replace("s:", "", str_replace("o:","", str_replace("u:","",str_replace("h:","",'<?xml version="1.0" encoding="utf-8"?>'.$xml)))))),TRUE);
+        error_log('xmlToArray__:',3,'error_log.php');
+        error_log($xml,3,'error_log.php');
+        $array = json_decode(json_encode(simplexml_load_string(str_replace("s:", "", str_replace("o:","", str_replace("u:","",str_replace("h:","",'<?xml version="1.0" encoding="utf-8"?>'.$xml)))))),TRUE);
+        error_log('xmlToArray__$array:',3,'error_log.php');
+        error_log($array,3,'error_log.php');
+        return $array;
     }
 
     function genUuid() {
